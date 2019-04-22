@@ -1,11 +1,3 @@
-
-$('#capture').on('click',function(){
-  $.post({url:'/upload',success:function(data){
-    x=data.imgurl
-  }
-})
-});
-
 function initImageUpload(box) {
   let uploadField = box.querySelector('.image-upload');
 
