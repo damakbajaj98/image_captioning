@@ -6,26 +6,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <style>
   .buttonholder{
-    margin-top: 10vh;
+    margin-top: 1vh;
   }
-    #capture{
-      margin-top: 10vh;
-      margin-left: 20vw;
-      width: 20%;
-    }
     #generate{
       margin-top: 5vh;
-      margin-left: 40.5vw;
-      width: 20%
+      margin-left: 38.5vw;
+      width: 23%
     }
 
-    #blah{
-      border: 2px solid lightgrey;
-      margin-left:32vw;
-      margin-top: 5vh;
-      /* height:360px; */
-      /* width: 360px; */
-    }
   @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
@@ -44,6 +32,7 @@ background-color: lighten($base-color, 45%);
 }
 
 .wrapper{
+margin-top: 10vh;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -60,36 +49,44 @@ height: 300px;
 margin: 10px;
 background-color: white;
 border-radius: 5px;
-box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 overflow: hidden;
 }
 
+.image-upload{
+    margin-left: -70px;
+}
+
+
 .upload-options {
 position: relative;
-height: 75px;
+height: 100px;
+margin-top: 5px;
 background-color: $base-color;
 cursor: pointer;
 overflow: hidden;
 text-align: center;
+font-style: italic;
 transition: background-color ease-in-out 150ms;
 &:hover {
   background-color: lighten($base-color, 10%);
 }
 & input {
   width: 0.1px;
-  height: 0.1px;
+  height: 1px;
   opacity: 0;
   overflow: hidden;
   position: absolute;
   z-index: -1;
+  background-color: #26a69a;
 }
 & label {
+  background-color: #26a69a;
   display: flex;
   align-items: center;
   width: 100%;
   height: 100%;
-  font-weight: 400;
+  font-weight: 500;
   text-overflow: ellipsis;
   white-space: nowrap;
   cursor: pointer;
@@ -106,15 +103,16 @@ transition: background-color ease-in-out 150ms;
   }
   & span {
     display: inline-block;
-    width: 50%;
-    height: 100%;
+    width: 70%;
+    height: 150%;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    vertical-align: middle;
+    vertical-align: bottom;
     text-align: center;
     &:hover i.material-icons {
-      color: lightgray;
+      color:
+      background-color: #26a69a;;
     }
   }
 }
@@ -122,7 +120,7 @@ transition: background-color ease-in-out 150ms;
 
 
 .js--image-preview {
-height: 225px;
+height: 275px;
 width: 100%;
 position: relative;
 overflow: hidden;
@@ -131,6 +129,7 @@ background-color: white;
 background-position: center center;
 background-repeat: no-repeat;
 background-size: cover;
+border: 1px solid black;
 &::after {
   content: "photo_size_select_actual";
   font-family: 'Material Icons';
@@ -178,16 +177,16 @@ animation: ripple 0.4s linear;
 
 <div class="wrapper">
   <div class="box">
-    <div class="js--image-preview"></div>
-    <div class="upload-options">
-      <label>
-        <input type="file" class="image-upload" accept="image/*" />
-      </label>
-    </div>
+      <div class="js--image-preview"></div>
+      <div class="upload-options">
+        <label>
+          <input type="file" class="image-upload" accept="image/*" />
+        </label>
+      </div>
   </div>
 </div>
+
 <div class="buttonholder">
-  <!-- <a href="#" class="btn btn-primary btn-lg active" id="capture" role="button" aria-pressed="true">Capture</a> -->
   <a href="#" class="btn btn-primary btn-lg active" id="generate" role="button" aria-pressed="true">Generate</a>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
