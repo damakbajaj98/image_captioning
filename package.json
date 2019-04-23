@@ -7,8 +7,22 @@
   "main": "index.js",
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^4.16.4"
-  }
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "fs": "0.0.1-security",
+    "hbs": "^4.0.4",
+    "python-shell": "^1.0.7",
+    "save-file": "^2.3.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damakbajaj98/image_captioning.git"
+  },
+  "bugs": {
+    "url": "https://github.com/damakbajaj98/image_captioning/issues"
+  },
+  "homepage": "https://github.com/damakbajaj98/image_captioning#readme",
+  "description": ""
 }

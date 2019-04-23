@@ -3,7 +3,7 @@
   // The width and height of the captured photo. We will set the
   // width to the value defined here, but the height will be
   // calculated based on the aspect ratio of the input stream.
-
+  var myimage;
   var width = 320;    // We will scale the photo width to this
   var height = 0;     // This will be computed based on the input stream
 
@@ -71,6 +71,7 @@
     context.fillRect(0, 0, canvas.width, canvas.height);
 
     var data = canvas.toDataURL('image/png');
+    console.log(data)
     photo.setAttribute('src', data);
   }
 
@@ -86,13 +87,32 @@
       canvas.width = width;
       canvas.height = height;
       context.drawImage(video, 0, 0, width, height);
-
       var data = canvas.toDataURL('image/png');
+      myimage=data
       photo.setAttribute('src', data);
     } else {
       clearphoto();
     }
   }
+
+  function playaudio(){
+    console.log('playing audio')
+    $('#audiocontainer').append(`<audio controls>
+      <source src="captionaudio.mp3" type="audio/mp3">
+
+      <p>Your browser doesn't support HTML5 audio. Here is a <a href="viper.mp3">link to the audio</a> instead.</p>
+    </audio>`)
+  }
+
+  $("#generate").on('click',function(){
+    $.post({url:'/predict',data:{img:myimage},success:function(res){
+      console.log(res)
+      $('#caption').empty();
+      $('#caption').append(`<p id="cap">${res.data}</p>`)
+      playaudio();
+    }
+  })
+  })
 
   // Set up our event listener to run the startup process
   // once loading is complete.
