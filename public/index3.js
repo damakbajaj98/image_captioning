@@ -28,6 +28,7 @@ function encodeImageFileAsURL() {
 
 function playaudio(){
   console.log('playing audio')
+  $('#audiocontainer').empty();
   $('#audiocontainer').append(`<audio controls>
     <source src="captionaudio.mp3" type="audio/mp3">
 

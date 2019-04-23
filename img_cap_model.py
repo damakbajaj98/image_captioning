@@ -69,17 +69,6 @@ indices_2_word[1698] = '<start>'
 
 vocab_size = len(word_2_indices.keys())
 
-
-captions = np.load("../ImageCaptioning/CCaptions.npy")
-next_words = np.load("../ImageCaptioning/NNextwords.npy")
-
-
-images = np.load("../ImageCaptioning/images.npy")
-
-
-imag = np.load("../ImageCaptioning/Image_names.npy")
-
-
 embedding_size = 128
 max_len = 40
 
